@@ -14,6 +14,8 @@ The project will be wrapped inside a Docker container for isolation purpose.
 To start a new Docker container with everything set up, run `make start`
 Log into the container, and play with the various tools, such as `bazel test //...` or `protoc ...`
 
+To run the test, run `make test`
+
 ## References
 This project references the various documentation and tutorials from `developers.google.com`
 The demo project comes from the Protocol Buffer's Go tutorial.
