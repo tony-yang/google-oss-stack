@@ -14,6 +14,20 @@ The project will be wrapped inside a Docker container for isolation purpose.
 To start a new Docker container with everything set up, run `make start`
 Log into the container, and play with the various tools, such as `bazel test //...` or `protoc ...`
 
+To generate a new proto in Go
+```
+cd ~/dev/src/addressbook && protoc -I address/ address/addressbook.proto --go_out=plugins=grpc:address 
+```
+
+To run the gRPC server and client, 
+```
+// In one terminal
+cd ~/dev/src/addressbook/server && go run server.go
+
+// In another terminal
+cd ~/dev/src/addressbook/client && go run client.go
+```
+
 To run the test, run `make test`
 
 ## References

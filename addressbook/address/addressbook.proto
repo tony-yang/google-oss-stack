@@ -3,6 +3,10 @@ package address;
 
 import "google/protobuf/timestamp.proto";
 
+service AddressBookService {
+  rpc GetAddressBook(AddressBookName) returns (AddressBook) {}
+}
+
 message Person {
   string name = 1;
   int32 id = 2; // Unique ID num
@@ -26,4 +30,8 @@ message Person {
 // Our address book file is just one of these
 message AddressBook {
   repeated Person people = 1;
+}
+
+message AddressBookName {
+  string name = 1;
 }
