@@ -1,5 +1,5 @@
 FROM ubuntu
-  
+
 RUN export DEBIAN_FRONTEND=noninteractive \
  && apt-get update && apt-get install -y \
     build-essential \
@@ -44,6 +44,8 @@ RUN apt-get update \
  && curl https://bazel.build/bazel-release.pub.gpg | apt-key add - \
  && apt-get update \
  && apt-get install -y bazel
+
+RUN go get -u google.golang.org/grpc
 
 ADD ./addressbook /root/dev/src/addressbook
 
